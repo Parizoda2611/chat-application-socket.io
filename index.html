@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="title">
+                <img class="logo" src="/icons/chat.png" alt="">
+                <h1>Chat App</h1>
+            </div>
+            <button class="button" onclick="show_hide()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+        <div class="container">
+        <div class="users-window">
+            <div class="users-head">
+                <h3>People</h3>
+                <h4 class="users-count">0</h4>
+            </div>
+            <div class="users-list">
+            </div>
+        </div>
+        <div class="chat-window">
+            <div class="chats">
+            </div>
+            <div class="user-input">
+                <input id="user-msg" value="" type="text" placeholder="Write a message...">
+                <button id="msg-send" type="button">Send</button>
+            </div>
+        </div>   
+        </div>
+    </main>
+
+    <script>
+        var uwindow = document.querySelector('.users-window');
+        function show_hide(){
+            if(uwindow.style.display=='block'){
+                uwindow.style.display = 'none';
+            } else{
+                uwindow.style.display = 'block';
+            }
+        }
+    </script>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/client.js"></script>
+</body>
+</html>
